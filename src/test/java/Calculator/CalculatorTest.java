@@ -29,4 +29,36 @@ public class CalculatorTest {
         long result = calculator.subtract(x, y);
         Assert.assertEquals(expectedResult, result);;
     }
+
+    // Added Multiply and Divide Test functionality
+    @Test
+    public void testMultiply() {
+        int x = 40;
+        int y = 10;
+        long expectedResult = 400;
+        long result = calculator.multiply(x, y);
+        Assert.assertEquals(expectedResult, result);;
+    }
+
+    @Test
+    public void testDivide() {
+        int x = 88;
+        int y = 10;
+        double expectedResult = 8.8;
+        double result = 0;
+        try {
+            result = calculator.divide(x, y);
+        }catch (Exception e){
+
+        }
+        Assert.assertEquals(expectedResult, result,0.00005);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testDivideByZero() throws IOException {
+        int a = 15;
+        int b = 0;
+        calculator.divide(a, b);
+    }
+
 }

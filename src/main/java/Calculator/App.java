@@ -20,6 +20,8 @@ public class App
             System.out.println("\n-------------------------------------- Calculator --------------------------------------------------");
             System.out.println("[1] Add");
             System.out.println("[2] Subtract");
+            System.out.println("[3] Multiplication");                  // Added Multiply and Divide functionality
+            System.out.println("[4] Division");                        // Added Multiply and Divide functionality
             System.out.println("[0] Exit");
             System.out.print("Enter the option : ");
 
@@ -27,7 +29,7 @@ public class App
 
             if (operation == 0)
                 return;
-            else if (operation > 3 || operation < 1) {
+            else if (operation > 5 || operation < 1) {
                 System.out.println("Invalid option!");
                 continue;
             }
@@ -43,6 +45,20 @@ public class App
                 }
                 case 2: {
                     System.out.println("Result : " + calculator.subtract(x, y));
+                    break;
+                }
+                // Added Multiply and Divide functionality
+                case 3: {
+                    System.out.println("Result : " + calculator.multiply(x, y));
+                    break;
+                }
+                case 4: {
+                    try {
+                        System.out.println("Result : " + calculator.divide(x, y));
+                    }catch (Exception e){
+                        System.out.println("Result : "+ e);
+                    }
+
                     break;
                 }
                 default: {
