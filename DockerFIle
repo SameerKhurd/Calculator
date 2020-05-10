@@ -1,0 +1,8 @@
+#BASE IMAGE
+FROM openjdk:8-jre-slim
+MAINTAINER Sameer Khurd
+RUN mkdir /usr/src/myapp
+COPY  target/Calculator-1.0-SNAPSHOT.jar /usr/src/myapp
+WORKDIR /usr/src/myapp
+#Execute the application
+CMD ["java","-cp","Calculator-1.0-SNAPSHOT.jar","Calculator.App"]
